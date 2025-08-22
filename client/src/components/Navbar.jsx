@@ -15,7 +15,7 @@ const Navbar = () => {
   return (
     <>
       <div className="bg-primary text-primary-content flex justify-between items-center p-3">
-        <h1 className="text-3xl font-bold"><Link to={"/"}>ChatApp</Link></h1>
+        <h1 className="text-3xl font-bold"><Link to={"/"}>MSR ARTEX</Link></h1>
         {/* <button className="btn btn-error">Testing</button> */}
 
         <div className="flex gap-4 items-center">

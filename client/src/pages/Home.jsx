@@ -12,7 +12,7 @@ const SplashScreen = () => {
     >
       {/* Logo/Image */}
       <motion.img
-        src="/logo.png" // 👉 apna logo path lagao (public/logo.png)
+        src="/logo.png" // 👉 put your logo here (public/logo.png)
         alt="App Logo"
         initial={{ scale: 0, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}

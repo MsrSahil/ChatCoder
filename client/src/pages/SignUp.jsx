@@ -28,7 +28,7 @@ const SignupPage = () => {
             <input
               type="text"
               placeholder="Enter your name"
-              className="input input-bordered w-full bg-white/80 focus:ring-2 focus:ring-primary rounded-xl"
+              className="input"
             />
           </div>
 
@@ -39,7 +39,7 @@ const SignupPage = () => {
             <input
               type="email"
               placeholder="Enter your email"
-              className="input input-bordered w-full bg-white/80 focus:ring-2 focus:ring-primary rounded-xl"
+              className="input "
             />
           </div>
 
@@ -50,7 +50,7 @@ const SignupPage = () => {
             <input
               type="password"
               placeholder="Create a password"
-              className="input input-bordered w-full bg-white/80 focus:ring-2 focus:ring-secondary rounded-xl"
+              className="input"
             />
           </div>
 
@@ -61,13 +61,13 @@ const SignupPage = () => {
             <input
               type="password"
               placeholder="Re-enter your password"
-              className="input input-bordered w-full bg-white/80 focus:ring-2 focus:ring-secondary rounded-xl"
+              className="input"
             />
           </div>
 
           <motion.button
             type="submit"
-            className="btn w-full bg-gradient-to-r from-primary to-secondary text-white text-lg rounded-xl shadow-lg hover:scale-105 transition"
+            className="btn btn-primary w-full"
             whileTap={{ scale: 0.95 }}
           >
             🚀 Sign Up
