@@ -1,24 +1,38 @@
-import mongoose from 'mongoose';
+import mongoose from "mongoose";
 
-const userSchema = mongoose.Schema(
-    {
-        fullName:{
-            type:String,
-            required:true,
-        },
-        email:{
-            type:String,
-            required:true,
-            unique:true,
-        },
-        password:{
-            type: String,
-            required: true,
-            
-        },
+const UserSchema = mongoose.Schema(
+  {
+    fullName: {
+      type: String,
+      required: true,
     },
-    {timestamps: true}
-)
-
-const User = mongoose.model("User",userSchema);
+    password: {
+      type: String,
+    },
+    googleId: {
+      type: String,
+    },
+    email: {
+      type: String,
+      required: true,
+      unique: true,
+    },
+    photo:{
+      type:String,
+      default:""
+    },
+    TwoFactorAuth: {
+      type: String,
+      default: "true",
+    },
+    type: {
+      type: String,
+      enum: ["normalUser", "googleUser"],
+    },
+  },
+  {
+    timestamps: true,
+  }
+);
+const User = mongoose.model("User", UserSchema);
 export default User;
