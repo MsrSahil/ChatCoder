@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import Chatting from "../components/Chatting";
 import api from "../config/Api";
 import socketAPI from "../config/WebSocket";
+import toast from "react-hot-toast";
 
 const ChatPage = () => {
   const { user, isLogin } = useAuth();

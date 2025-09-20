@@ -116,6 +116,7 @@ const Register = () => {
                   placeholder="••••••••"
                   value={registerData.password}
                   onChange={handleChange}
+                  autoComplete="false"
                 />
               </div>
             </div>
@@ -138,6 +139,7 @@ const Register = () => {
                   placeholder="••••••••"
                   value={registerData.confirmPassword}
                   onChange={handleChange}
+                  autoComplete="false"
                 />
               </div>
             </div>

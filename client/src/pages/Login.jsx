@@ -116,6 +116,7 @@ const Login = () => {
                   placeholder="••••••••"
                   value={loginData.password}
                   onChange={handleChange}
+                  autoComplete="false"
                 />
               </div>
             </div>
