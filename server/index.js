@@ -17,7 +17,7 @@ const app = express();
 // CORS Configuration to allow both localhost and Netlify
 const allowedOrigins = [
   "http://localhost:5173",
-  "https://viprepofrontend.netlify.app"
+  "https://elegant-torte-03fc73.netlify.app"
 ];
 
 app.use(cors({ origin: allowedOrigins, credentials: true }));
