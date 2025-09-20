@@ -10,6 +10,7 @@ const genToken = (user, res) => {
     secure: process.env.NODE_ENV === "production", // ✅ only send over HTTPS in production
     sameSite: "none", // ✅ allow cross-site cookies
     maxAge: 24 * 60 * 60 * 1000, // 1 day
+    path: "/",
   });
 
   return;
