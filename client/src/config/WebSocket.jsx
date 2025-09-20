@@ -1,5 +1,9 @@
-import { io } from "socket.io-client";
+import {io} from "socket.io-client";
 
-const socketAPI = io("http://localhost:4505", { withCredentials: true });
+const baseURL = import.meta.env.VITE_API_URL || "http://localhost:4505";
 
-export default socketAPI;
+const socket = io(baseURL, {
+  withCredentials: true,
+});
+
+export default socket;

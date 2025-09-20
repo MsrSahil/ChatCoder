@@ -13,7 +13,14 @@ import { Server } from "socket.io";
 import webSocket from "./src/webSocket.js";
 
 const app = express();
-app.use(cors({ origin: "http://localhost:5173", credentials: true }));
+
+// CORS Configuration to allow both localhost and Netlify
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://viprepofrontend.netlify.app"
+];
+
+app.use(cors({ origin: allowedOrigins, credentials: true }));
 app.use(express.json());
 app.use(morgan("dev"));
 app.use(cookieParser());
@@ -39,7 +46,7 @@ const httpServer = http.createServer(app);
 
 const io = new Server(httpServer, {
   cors: {
-    origin: "http://localhost:5173",
+    origin: allowedOrigins,
     credentials: true,
     methods: ["GET", "POST"],
   },
@@ -49,7 +56,7 @@ webSocket(io);
 
 const port = process.env.PORT || 5000;
 
-httpServer.listen(port, () => {
+httpServer.listen(port,"0.0.0.0", () => {
   console.log(`Server is running on port ${port}`);
   connectDB();
 });
