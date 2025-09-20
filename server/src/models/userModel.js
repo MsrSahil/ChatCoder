@@ -23,7 +23,7 @@ const UserSchema = mongoose.Schema(
     },
     TwoFactorAuth: {
       type: String,
-      default: "true",
+      default: "false",
     },
     type: {
       type: String,

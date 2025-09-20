@@ -3,16 +3,8 @@ import { motion } from "framer-motion";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
 
 const fadeUp = {
-  hidden: { opacity: 0, y: 40 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.7, ease: "easeOut" } },
-};
-
-const staggerContainer = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transition: { staggerChildren: 0.2, delayChildren: 0.2 },
-  },
+  hidden: { opacity: 0, y: 20 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.4, ease: "easeOut" } },
 };
 
 const ContactPage = () => {
@@ -27,8 +19,8 @@ const ContactPage = () => {
       >
         <motion.h1
           className="text-5xl font-extrabold text-primary drop-shadow mb-4"
-          animate={{ y: [0, -10, 0] }}
-          transition={{ duration: 3, repeat: Infinity }}
+          animate={{ y: [0, -6, 0] }}
+          transition={{ duration: 2, repeat: Infinity }}
         >
           Get in <span className="text-secondary">Touch</span> 📩
         </motion.h1>
@@ -39,13 +31,7 @@ const ContactPage = () => {
       </motion.div>
 
       {/* Contact Info */}
-      <motion.div
-        className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-20"
-        variants={staggerContainer}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true }}
-      >
+      <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-20">
         {[
           { icon: <Phone className="w-10 h-10 text-primary" />, title: "Phone", value: "+91 98765 43210" },
           { icon: <Mail className="w-10 h-10 text-secondary" />, title: "Email", value: "support@chatapp.com" },
@@ -54,7 +40,10 @@ const ContactPage = () => {
           <motion.div
             key={idx}
             variants={fadeUp}
-            whileHover={{ scale: 1.05 }}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true }}
+            whileHover={{ scale: 1.03 }}
             className="p-8 rounded-3xl bg-white/70 backdrop-blur-lg shadow-lg text-center border hover:shadow-xl transition"
           >
             {item.icon}
@@ -62,7 +51,7 @@ const ContactPage = () => {
             <p className="text-gray-600">{item.value}</p>
           </motion.div>
         ))}
-      </motion.div>
+      </div>
 
       {/* Contact Form */}
       <motion.div
@@ -100,7 +89,7 @@ const ContactPage = () => {
           <motion.button
             type="submit"
             className="btn btn-primary w-full flex items-center gap-2 text-lg font-bold rounded-xl"
-            whileHover={{ scale: 1.05 }}
+            whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.95 }}
           >
             <Send className="w-5 h-5" /> Send Message
@@ -109,33 +98,26 @@ const ContactPage = () => {
       </motion.div>
 
       {/* Map Section */}
-      <motion.div
-        className="max-w-5xl mx-auto mt-20 rounded-3xl overflow-hidden shadow-lg"
-        variants={fadeUp}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true }}
-      >
+      <div className="max-w-5xl mx-auto mt-20 rounded-3xl overflow-hidden shadow-lg">
         <iframe
           title="ChatApp Location"
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3683.123456789!2d75.8577!3d22.7196!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjLCsDQzJzEwLjUiTiA3NcKwNTEnMjguMSJF!5e0!3m2!1sen!2sin!4v1670000000000!5m2!1sen!2sin"
+          src="https://maps.google.com/maps?q=Bhopal,%20Madhya%20Pradesh&t=&z=13&ie=UTF8&iwloc=&output=embed"
           width="100%"
           height="400"
           style={{ border: 0 }}
           allowFullScreen=""
           loading="lazy"
-          referrerPolicy="no-referrer-when-downgrade"
         ></iframe>
-      </motion.div>
+      </div>
 
       {/* CTA */}
       <motion.div
         className="max-w-4xl mx-auto text-center p-10 mt-20 rounded-3xl shadow-xl bg-gradient-to-r from-primary to-secondary text-white"
-        initial={{ opacity: 0, scale: 0.9 }}
+        initial={{ opacity: 0, scale: 0.95 }}
         whileInView={{ opacity: 1, scale: 1 }}
         viewport={{ once: true }}
-        transition={{ duration: 1 }}
-        whileHover={{ scale: 1.05 }}
+        transition={{ duration: 0.6 }}
+        whileHover={{ scale: 1.03 }}
       >
         <h2 className="text-3xl font-bold mb-4">
           Let’s Build Something Great Together 🤝
@@ -145,7 +127,7 @@ const ContactPage = () => {
         </p>
         <motion.button
           className="btn bg-white text-primary rounded-xl font-bold shadow-lg"
-          whileHover={{ scale: 1.1 }}
+          whileHover={{ scale: 1.08 }}
           whileTap={{ scale: 0.95 }}
         >
           Contact Us Now

@@ -1,29 +1,32 @@
 import React from "react";
 import Navbar from "./components/Navbar";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-
-import AboutPage from "./pages/about.jsx";
-import ContactPage from "./pages/Contact.jsx";
-import LoginPage from "./pages/Login.jsx";
-import ServicesPage from "./pages/Services.jsx";
-import HomePage from "./pages/Home.jsx";
-import SignupPage from "./pages/SignUp.jsx";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Contact from "./pages/ContactUs";
+import Register from "./pages/Register";
+import Login from "./pages/Login";
+import { Toaster } from "react-hot-toast";
+import Dashboard from "./pages/Dashboard";
+import ChatPage from "./pages/ChatPage";
+import ServicesPage from "./pages/Services";
 
 const App = () => {
   return (
     <>
       <BrowserRouter>
+        <Toaster />
         <Navbar />
         <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/about" element={<AboutPage />} />
-          <Route path="/contact" element={<ContactPage />} />
-          <Route path="/login" element={<LoginPage />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/chat" element={<ChatPage />} />
           <Route path="/services" element={<ServicesPage />} />
-          <Route path="/register" element={<SignupPage />} />
 
-          {/* <Route path="/logout" element={<div>Logout</div>} /> */}
-          {/* <Route path="/register" element={<div>register</div>} /> */}
         </Routes>
       </BrowserRouter>
     </>
