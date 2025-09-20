@@ -92,18 +92,10 @@ export const Login = async (req, res, next) => {
     console.log("Login successful");
     genToken(existingUser, res);
 
-    res
-      .status(200)
-      .cookie("IDCard", token, {
-        maxAge: 1000 * 60 * 60 * 24, // 1 din
-        httpOnly: true,
-        secure: true, // production me always true
-        sameSite: "None", // capital N
-      })
-      .json({
-        message: `welcome back ${existingUser.fullName}`,
-        data: existingUser,
-      });
+    res.status(200).json({
+      message: "Login successful",
+      data: existingUser,
+    });
   } catch (error) {
     next(error);
   }
