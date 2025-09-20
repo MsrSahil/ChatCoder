@@ -6,7 +6,7 @@ import { useAuth } from "../context/AuthContext";
 const Navbar = () => {
   const { user, isLogin } = useAuth();
   const [selectedTheme, setSelectedTheme] = useState(
-    sessionStorage.getItem("theme") || "light"
+    sessionStorage.getItem("theme") || "spotify"
   );
 
   const location = useLocation().pathname.slice(1);

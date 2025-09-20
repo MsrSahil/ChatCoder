@@ -4,19 +4,6 @@ import bcrypt from "bcrypt";
 import sendEmail from "../utils/sendEmail.js";
 import genToken from "../utils/auth.js";
 
-const genDummyImage = (fullName) => {
-  const r = Math.floor(Math.random() * 56) + 200; // 200–255
-  const g = Math.floor(Math.random() * 56) + 200;
-  const b = Math.floor(Math.random() * 56) + 200;
-
-  const randomColor = `#${((1 << 24) + (r << 16) + (g << 8) + b)
-    .toString(16)
-    .slice(1)}`;
-
-  return `https://ui-avatars.com/api/?name=${fullName.charAt(
-    0
-  )}&background=${randomColor}&color=fff&size=360`;
-};
 
 export const Register = async (req, res, next) => {
   try {
@@ -199,7 +186,7 @@ export const SendOTPForLogin = async (req, res, next) => {
       error.statusCode = 401;
       return next(error);
     }
-    console.log(existingUser);
+    // console.log(existingUser);
     if (existingUser.TwoFactorAuth === "false") {
       req.body.otp = "N/A";
       console.log("Starting Login");
